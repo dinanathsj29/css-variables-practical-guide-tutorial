@@ -78,3 +78,96 @@ Topics included/covered
 - **Example**: Variables are like `box or an envelope` which we use to `organize various kinds of stuff` and put a `label` on each box or an envelope
 - **Example**: Variable declaration and assignment is just `like Maths & Algebra`: `x = 10`; and in JavaScript we write `var x = 10;`
 > **Note**: Depending on programming language, the different assignment operator like `equal to =` or `colon :` is used to assign value to a variable
+
+- For learning/understanding purpose/instance, lets consider the following JavaScript snippet:
+```js
+// javascript variables - variables defined to hold different types of data
+var techName = 'JavaScript'; // String literal 
+var version = 6; // Number literal
+var isDone = true; // Boolean literal
+
+console.log('Learning '+techName+version);
+
+var firstName = 'Dinanath ';
+let lastName = 'Jayaswal'
+const fullName = firstName + lastName
+```
+
+
+> **Syntax & Example**: `1.1-javascript-variable.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.1-javascript-variable.html</title>
+
+    <!-- internal style -->
+    <style>
+      /* css selector: { property:value; } */
+      body {
+        font-family: arial;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    
+
+    <!-- include external JavaScript - body section -->
+    <script src="./1.1-script.js"></script>
+    
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.1-script.js`
+
+```js
+// external js file
+// Write all JavaScript code here
+
+// variables defined to hold different types of data
+var techName = 'JavaScript'; // String literal 
+var version = 6; // Number literal
+var isDone = true; // Boolean literal
+
+console.log('Learning '+techName+version);
+
+// ------------------------------
+
+// Declaring Variable
+var userName;
+
+// Assigning value
+userName = 'Dinanath';
+
+console.log('Welcome '+userName);
+
+// ------------------------------
+
+// Declaring multiple variables
+var firstName = 'Dinanath', lastName = 'Jayaswal', age = 35, isMarried = 'true';
+
+// Declaring multiple variables in multiple lines for readability
+/* var firstName = 'Dinanath', 
+lastName = 'Jayaswal', 
+age = 35, 
+isMarried = 'true'; */
+
+console.log('I am ' + firstName + ' ' + lastName);
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.1-javascript-variable.png" alt="JavaScript variables declaration and use" title="JavaScript variables declaration and use" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - JavaScript variables declaration and use </figcaption>
+  </figure>
+</p>
