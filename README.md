@@ -55,12 +55,13 @@ Topics included/covered
 
 1. [Introduction to CSS Variables/Custom Properties](#1-introduction-to-css-variables-custom-properties)
     - 1.1. [What are Variables](#11-what-are-variables)
-    
+    - 1.2. [What are CSS Variables](#12-what-are-css-variables)
+
 1 Introduction to CSS Variables Custom Properties
 =====================
 
 - CSS is static stylesheet language/mostly a declarative language, lacking in dynamic capabilities/Programming features-terminologies like variables, mixin, function, re-usable classes, etc.
-- To overcome all CSS disadvantages and add advanced programming features-terminologies, earlier/in past we have used CSS pre-processors like `SASS` or `LESS`, but now a days it's possible to use those features in pure CSS with CSS3 advanced features i.e. Custom Properties
+- To overcome all CSS disadvantages and add advanced programming features-terminologies, earlier/in past we have used CSS pre-processors like `SASS` or `LESS`, but now a days it's possible to use those features in pure/native CSS with CSS3 advanced features i.e. Custom Properties
 
 1.1. What are Variables
 ---------------------
@@ -167,6 +168,182 @@ console.log('I am ' + firstName + ' ' + lastName);
 <p>
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.1-javascript-variable.png" alt="JavaScript variables declaration and use" title="JavaScript variables declaration and use" width="1000" border="2" />
-    <figcaption>&nbsp;&nbsp;&nbsp; Image - JavaScript variables declaration and use </figcaption>
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.1 - JavaScript variables declaration and use </figcaption>
+  </figure>
+</p>
+
+1.2. What are CSS Variables
+---------------------
+
+- CSS Variables look like a simple regular CSS properties with an extra `dashes --` before them: `--variable-name: value;` e.g., `--base-font: Arial;`
+- CSS variables set/defined/declared using custom property notation (e.g., `--base-color: black;`) and are accessed/called using the `var() function` (e.g., `background-color: var(--base-color);`).
+- CSS Variables are also known as "Custom Properties", simply we can say `CSS Variables == Custom Properties`
+- `Custom properties sometimes also referred to as CSS variables or Cascading variables` are nothing but entities that contain specific values to be reused/accessed throughout a document and saves lots of time while editing CSS properties and values in large/huge websites
+- `CSS variables` are very handy and useful when we are working with huge/large websites with repetitive properties and styles (many properties like color,font-size, margins, etc)
+- By using `CSS variables` In case of any `global change needed` through-out the application, instead of changing every occurrence/instance its advisable to change the `single variable` so it will reflect globally
+- Custom properties do follow CSS mechanisms/principles and so they cascade, inherit their value from their parent. 
+- CSS variables can be defined with or as Global or Local scope
+
+> **Syntax & Example**: `1.2.1-old-css-way-repetition.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.2.1-old-css-way-repetition.html</title>
+
+    <link rel="stylesheet" href="./1.2.1-style-old-way-repetition.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="sub-container">
+
+        <h1 class="heading-text" id="mainHeadingText">1.2 What are CSS Variables</h1>
+
+        <p class="para-text" id="mainParaText">`Variables` are one of the most fundamental and important concepts in any programming language</p>
+
+        <h2 class="subheading-text" id="subHeadingText">1.2 - 1.2.1 old css way repetition</h2>
+
+      </div>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.2.1-style-old-way-repetition.css`
+
+```css
+body {
+  font-family: arial;
+}
+
+.heading-text {
+  background-color: #f66969;
+  color: #ffffff
+  padding: 10px;
+}
+
+/* same property used above with .heading-text are repeated */
+.subheading-text {
+  background-color: #f66969;
+  color: #ffffff
+  padding: 10px;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.2.1-old-css-way-repetition.png" alt="The old CSS way of repeating value" title="The old CSS way of repeating value" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.2.1 - The old CSS way of repeating value </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.2.1.1-old-css-way-repetition.png" alt="The old CSS way of repeating value" title="The old CSS way of repeating value" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.2.1.1 - The old CSS way of repeating value </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `1.2.2-new-css-way-variables.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.2.2-new-css-way-variables.html</title>
+
+    <link rel="stylesheet" href="./1.2.2-style-new-css-way-variables.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="sub-container">
+
+        <h1 class="heading-text" id="mainHeadingText">1.2 What are CSS Variables</h1>
+
+        <p class="para-text" id="mainParaText">`Variables` are one of the most fundamental and important concepts in any programming language</p>
+
+        <h2 class="subheading-text" id="subHeadingText">1.2 - 1.2.2 new css way variables</h2>
+
+      </div>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.2.2-style-new-css-way-variables.css`
+
+```css
+/* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
+:root {
+  --font-face: Arial;
+  --base-bg-color: #f66969;
+  --base-text-color: #ffffff;
+  --base-padding: 10px;
+}
+
+body {
+  font-family: var( --font-face);
+}
+
+.heading-text {
+  /* background-color: #f66969;
+  color: #ffffff;
+  padding: 10px; */
+
+  /* access/call/use variables with var() function*/
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  /* background-color: #f66969;
+  color: #ffffff;
+  padding: 10px; */
+
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.2.2-new-css-way-variables.png" alt="The new CSS way of using variables - DRY - Do Not Repeat Yourself principle" title="The new CSS way of using variables - DRY - Do Not Repeat Yourself principle" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.2.2 - The new CSS way of using variables - DRY - Do Not Repeat Yourself principle </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.2.2.1-new-css-way-variables.png" alt="The new CSS way of using variables - DRY - Do Not Repeat Yourself principle" title="The new CSS way of using variables - DRY - Do Not Repeat Yourself principle" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.2.2 - The new CSS way of using variables - DRY - Do Not Repeat Yourself principle </figcaption>
   </figure>
 </p>
