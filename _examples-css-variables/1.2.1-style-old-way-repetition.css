@@ -1,0 +1,16 @@
+body {
+  font-family: arial;
+}
+
+.heading-text {
+  background-color: #f66969;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* same property used above with .heading-text are repeated */
+.subheading-text {
+  background-color: #f66969;
+  color: #ffffff;
+  padding: 10px;
+}

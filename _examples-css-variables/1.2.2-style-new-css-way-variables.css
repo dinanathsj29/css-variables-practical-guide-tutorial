@@ -1,0 +1,25 @@
+/* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
+:root {
+  --font-face: Arial;
+  --base-bg-color: #f66969;
+  --base-text-color: #ffffff;
+  --base-padding: 10px;
+}
+
+body {
+  font-family: var( --font-face);
+}
+
+.heading-text {
+  /* access/call/use/apply/refer variables with var() function*/
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  /* access/call/use/apply/refer variables with var() function*/
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
