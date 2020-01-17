@@ -49,3 +49,32 @@ Prerequisites for current course / What you need to know
 
 - Basic/Intermediate knowledge of HTML5 and CSS3
 - Basics of JavaScript will be an added advantage
+
+Topics included/covered
+=====================
+
+1. [Introduction to CSS Variables/Custom Properties](#1-introduction-to-css-variables/custom-properties)
+    - 1.1. [What are Variables](#11-what-are-variables)
+    
+1 Introduction to CSS Variables/Custom Properties
+=====================
+
+- CSS is static stylesheet language/mostly a declarative language, lacking in dynamic capabilities/Programming features-terminologies like variables, mixin, function, re-usable classes, etc.
+- To overcome all CSS disadvantages and add advanced programming features-terminologies, earlier/in past we have used CSS pre-processors like `SASS` or `LESS`, but now a days it's possible to use those features in pure CSS with CSS3 advanced features i.e. Custom Properties
+
+1.1. What are Variables
+---------------------
+
+- `Variables` are one of the most fundamental and important concepts in any programming language
+- A variable is `container/holder to store/hold the data/information`
+- A variable is a kind of data holder where we can store some value for future further programming use or calculation purpose
+- A JavaScript variable is simply a `name of the storage location (named containers/named storage)` for data
+- Variables are `symbolic names for values` 
+- Variables are used to store data of different types like a `string` of text, `numbers`, `boolean` values like true/false, an `array` or `object` of data, etc. 
+- The data or value stored in the variables can be `set`, `updated`, and `retrieved` whenever needed
+- Variables let you store and update different values your program needs in order to perform some work
+- Variables are declared using the keyword `var` keyword
+- The `assignment operator (=)` is used to assign value to a variable, like this: `var varName = value;` or `var firstName = 'JavaScript';`
+- **Example**: Variables are like `box or an envelope` which we use to `organize various kinds of stuff` and put a `label` on each box or an envelope
+- **Example**: Variable declaration and assignment is just `like Maths & Algebra`: `x = 10`; and in JavaScript we write `var x = 10;`
+> **Note**: Depending on programming language, the different assignment operator like `equal to =` or `colon :` is used to assign value to a variable
