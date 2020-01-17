@@ -53,10 +53,10 @@ Prerequisites for current course / What you need to know
 Topics included/covered
 =====================
 
-1. [Introduction to CSS Variables/Custom Properties](#1-introduction-to-css-variables/custom-properties)
+1. [Introduction to CSS Variables/Custom Properties](#1-introduction-to-css-variables-custom-properties)
     - 1.1. [What are Variables](#11-what-are-variables)
     
-1 Introduction to CSS Variables/Custom Properties
+1 Introduction to CSS Variables Custom Properties
 =====================
 
 - CSS is static stylesheet language/mostly a declarative language, lacking in dynamic capabilities/Programming features-terminologies like variables, mixin, function, re-usable classes, etc.
@@ -92,7 +92,6 @@ var firstName = 'Dinanath ';
 let lastName = 'Jayaswal'
 const fullName = firstName + lastName
 ```
-
 
 > **Syntax & Example**: `1.1-javascript-variable.html`
 
