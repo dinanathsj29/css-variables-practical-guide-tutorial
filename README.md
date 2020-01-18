@@ -56,6 +56,8 @@ Topics included/covered
 1. [Introduction to CSS Variables/Custom Properties](#1-introduction-to-css-variables-custom-properties)
     - 1.1. [What are Variables](#11-what-are-variables)
     - 1.2. [What are CSS Variables](#12-what-are-css-variables)
+    - 1.3. [Why CSS Variables](#13-why-css-variables) | 
+    [CSS Variable Benefits](#13-css-variable-benefits)
 
 1 Introduction to CSS Variables Custom Properties
 =====================
@@ -347,3 +349,18 @@ body {
     <figcaption>&nbsp;&nbsp;&nbsp; Image 1.2.2 - The new CSS way of using variables - DRY - Do Not Repeat Yourself principle </figcaption>
   </figure>
 </p>
+
+1.3. Why CSS Variables
+---------------------
+1.3. CSS Variable Benefits
+---------------------
+
+- The benefits of using variables in CSS are not that much different than from those of using variables in any other programming languages (define/initiate once and use when required)
+- The beauty of variables is that they let you store your valuables/properties in one place and update it on the fly for several various purposes
+- As your web apps grow bigger, the CSS becomes big, redundant and many times messy. Used within a good context, the CSS variables, give you the mechanism to reuse and easily change repeatedly occurring CSS properties
+- Its helpful in following `DRY - Do Not Repeat Yourself` principle, One of the most compelling thing is that it reduces repetition in your stylesheet
+- Create your style sheets those are less repetitive and easier to maintain
+better readability, and more flexibility
+- One can easily access and overwrite CSS variables inside Media Query
+- Anytime we can create and use scoped variables used only for a particular element like the following variable is used only for a top navigation bar: `.nav-top { --base-link-color: #ed143d; }`
+
