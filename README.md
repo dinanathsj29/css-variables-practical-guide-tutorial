@@ -62,7 +62,8 @@ Topics included/covered
     - 1.5. [Declaring CSS Variables](#15-declaring-css-variables) | 
     [Using CSS Variables](#15-using-css-variables)
     - 1.6. [CSS Variables vs Preprocessor Variables](#16-css-variables-vs-preprocessor-variables) | [Difference Between CSS Variables and Preprocessor Variables](#16-difference-between-css-variables-and-preprocessor-variables)
-
+    - 1.7. [CSS Variables with JavaScript](#17-css-variables-with-javascript)
+     
 1 Introduction to CSS Variables Custom Properties
 =====================
 
@@ -768,3 +769,134 @@ Variables are one of the major reasons why CSS preprocessors like `SASS` or `LES
 | One can easily access and overwrite CSS variables inside Media Query (as and when media or resolution changes the browser recheck/reassign/repaints the variable if needed | Sometimes it is not possible with preprocessor variables |
 
 > **Note**: As Browser understands only CSS styling, the preprocessor code/variables would do nothing in a browser, The browser wouldn't understand the declarations and toss them out, that's the reason why Preprocessors files need to compile/converted into native CSS before sending/viewing into the browser
+
+1.7. CSS Variables with JavaScript
+---------------------
+
+- One more super cool thing you can do is access CSS variables directly from your JavaScript code
+- One of the important benefits of CSS Variables is that it can interact via the power of JavaScript
+- While dealing with CSS Variables JavaScript widely uses `getComputedStyle()` `getProperty()` and `style.setProperty()` methods
+
+**Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+```html
+ <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.7.1-css-variables-javascript-interaction.html</title>
+
+    <link rel="stylesheet" href="1.7.1-style-variables-javascript-interaction.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="sub-container">
+
+        <h1 class="top-heading-text" id="topHeadingText">Get and Set CSS variables values with JavaScript</h1>
+
+        <h1 class="heading-text" id="mainHeadingText">1.5 Declaring CSS Variables/Using CSS Variables</h1>
+
+        <p class="para-text" id="mainParaText">`Variables` are one of the most fundamental and important concepts in any programming language</p>
+
+        <h2 class="subheading-text" id="subHeadingText">1.5 - 1.5.1. Declaring a global / globally scoped CSS Variables</h2>
+
+        <ul>
+          <li>List Item 1 - Define variables in any of root elements </li>
+          <li>List Item 2 - Call variables for required ids/classes/elements</li>
+          <li>List Item 3 - Verify variables properties reflect properly</li>
+        </ul>
+      
+      </div>
+
+    </div>
+    
+    <script src="./1.7.1-script-variables-javascript-interaction.js"></script>
+  
+  </body>
+
+</html>
+```
+
+**Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+```css
+ :root {
+  --font-face: Arial;
+  --base-bg-color: #66f969;
+  --base-text-color: #327b34;
+  --base-padding: 30px 10px;
+
+  --list-item-margin: 10px;
+  --list-item-padding: 20px 10px;
+  --list-item-corner-radius: 5px;
+}
+
+body {
+  font-family: var(--font-face);
+}
+
+.top-heading-text {
+  color: var(--base-text-color);
+}
+
+.heading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+ul > li {
+  color: var(--base-text-color);
+  padding: var(--list-item-padding);
+  border: 3px solid var(--base-bg-color);
+  border-radius: var(--list-item-corner-radius);
+  margin: var(--list-item-margin);
+}
+```
+
+**Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+```js
+ console.log('in 1.7.1-script-variables-javascript-interaction.js');
+
+// get the root element
+var root = document.querySelector(':root');
+//console.log('root', root);
+
+// get all the styles/CSSStyleDeclaration for root
+var rootStyles = getComputedStyle(root);
+console.log('rootStyles', rootStyles);
+
+// get --base-bg-color variable value available inside root styles
+// var baseBgColor = rootStyles.getPropertyValue('--base-bg-color');
+// console.log('baseBgColor', baseBgColor);
+
+root.style.setProperty('--base-bg-color', '#f66969') // red- #f66969; green - #66f969; blue- #6696f9;
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.7.1.1-css-variables-javascript-interaction-original-green.png" alt="CSS variable interaction with JavaScript Original Green output" title="CSS variable interaction with JavaScript Original Green output" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.7.1.1 - CSS variable interaction with JavaScript Original Green output </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.7.1.2-css-variables-javascript-interaction-set-red.png" alt="CSS variable interaction with JavaScript updated Red output" title="CSS variable interaction with JavaScript updated Red output" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.7.1.2 - CSS variable interaction with JavaScript updated Red output </figcaption>
+  </figure>
+</p>
