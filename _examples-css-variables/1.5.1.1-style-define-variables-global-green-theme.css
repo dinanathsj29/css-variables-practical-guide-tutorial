@@ -1,7 +1,7 @@
 /* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
 
 :root {
-  /* global scoped variabed */
+  /* global scoped variables */
   --font-face: Arial;
   --base-bg-color: #66f969;
   --base-text-color: #327b34;

@@ -1,11 +1,10 @@
 :root {
   /* global scoped variables */
   --font-face: Arial;
-  --base-bg-color: #6696f9;
-  --base-text-color: #37327b;
+  --base-bg-color: #f66969;
+  --base-text-color: #ffffff;
   --base-padding: 30px 10px;
 
-  /* list item related variables */
   --list-item-margin: 10px;
   --list-item-padding: 20px 10px;
   --list-item-corner-radius: 5px;
@@ -15,26 +14,31 @@ body {
   font-family: var(--font-face);
 }
 
-.top-heading-text {
-  color: var(--base-text-color);
-}
-
 .heading-text {
-  /* access/call/use/apply/refer variables with var() function*/
   background-color: var(--base-bg-color);
   color: var(--base-text-color);
   padding: var(--base-padding);
 }
 
 .subheading-text {
+  /* local scoped variables */
+  --base-bg-color: #66f969;
+  --base-text-color: #327b34;
+
   background-color: var(--base-bg-color);
   color: var(--base-text-color);
   padding: var(--base-padding);
 }
 
 ul > li {
+  /* local scoped variables */
+  --base-bg-color: #6696f9;
+  --base-text-color: #37327b;
+
+  background-color: var(--base-bg-color);
   color: var(--base-text-color);
   padding: var(--list-item-padding);
+
   border: 3px solid var(--base-bg-color);
   border-radius: var(--list-item-corner-radius);
   margin: var(--list-item-margin);
