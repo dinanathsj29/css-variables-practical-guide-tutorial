@@ -59,6 +59,8 @@ Topics included/covered
     - 1.3. [Why CSS Variables](#13-why-css-variables) | 
     [CSS Variable Benefits](#13-css-variable-benefits)
     - 1.4. [Browser support](#14-browser-support)
+     - 1.5. [Declaring CSS Variables](#15-declaring-css-variables) | 
+    [Using CSS Variables](#15-using-css-variables)
 
 1 Introduction to CSS Variables Custom Properties
 =====================
@@ -376,3 +378,259 @@ The CSS Variable - custom properties are supported well in all modern browsers, 
     <figcaption>&nbsp;&nbsp;&nbsp; Image 1.4 - CSS Variables browser support </figcaption>
   </figure>
 </p>
+
+1.5. Declaring CSS Variables
+---------------------
+1.5. Using CSS Variables
+---------------------
+
+- CSS Variables look like a simple regular CSS properties with an extra `dashes --` before them: `--variable-name: value;` ie. `--base-font: Arial;`
+- CSS variables set/defined/declared using custom property notation (e.g., `--base-color: black;`) and are accessed/called using the `var() function` (e.g., `background-color: var(--base-color);`).
+> **Note**: CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use
+
+> **Syntax**: `Define and use css variables`
+```css
+/* define variables */
+:root {
+  --base-theme-color: #4caf50; /* green shade */
+  --base-link-color: #cddc39; /* yellow lemon shade */
+}
+
+/* call/use variables */
+body {
+  background-color: var(--base-theme-color);
+}
+
+a:link {
+  color: var(--base-link-color);
+}
+```
+
+1.5.1.1. Declaring a global / globally scoped CSS Variables - Create a Green Theme
+---------------------
+
+> **Syntax & Example**: `1.5.1.1-define-variables-global-green-theme.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.5.1.1-define-variables-global-green-theme.html</title>
+
+    <link rel="stylesheet" href="1.5.1.1-style-define-variables-global-green-theme.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="sub-container">
+
+        <h1 class="top-heading-text" id="topHeadingText">Create a Green Theme with CSS variables</h1>
+
+        <h1 class="heading-text" id="mainHeadingText">1.5 Declaring CSS Variables/Using CSS Variables</h1>
+
+        <p class="para-text" id="mainParaText">`Variables` are one of the most fundamental and important concepts in any programming language</p>
+
+        <h2 class="subheading-text" id="subHeadingText">1.5 - 1.5.1. Declaring a global / globally scoped CSS Variables</h2>
+
+        <ul>
+          <li>List Item 1 - Define variables in any of root elements </li>
+          <li>List Item 2 - Call variables for required ids/classes/elements</li>
+          <li>List Item 3 - Verify variables properties reflect properly</li>
+        </ul>
+      
+      </div>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.5.1.1-style-define-variables-global-green-theme.css`
+
+```css
+/* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
+:root {
+  /* global scoped variabed */
+  --font-face: Arial;
+  --base-bg-color: #66f969;
+  --base-text-color: #327b34;
+  --base-padding: 30px 10px;
+
+  /* list item related variables */
+  --list-item-margin: 10px;
+  --list-item-padding: 20px 10px;
+  --list-item-corner-radius: 5px;
+}
+
+body {
+  font-family: var(--font-face);
+}
+
+.top-heading-text {
+  color: var(--base-text-color);
+}
+
+.heading-text {
+  /* access/call/use/apply/refer variables with var() function*/
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+ul > li {
+  color: var(--base-text-color);
+  padding: var(--list-item-padding);
+  border: 3px solid var(--base-bg-color);
+  border-radius: var(--list-item-corner-radius);
+  margin: var(--list-item-margin);
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.1-define-variables-global-green-theme.png" alt="Declaring & Using CSS Variables - Create a Green Theme" title="Declaring & Using CSS Variables - Create a Green Theme" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.1 - Declaring & Using CSS Variables - Create a Green Theme </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.1-style-define-variables-global-green-theme.png" alt="Styles Declaring & Using CSS Variables - Create a Green Theme" title="Styles Declaring & Using CSS Variables - Create a Green Theme" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.1 - Styles Declaring & Using CSS Variables - Create a Green Theme </figcaption>
+  </figure>
+</p>
+
+1.5.1.2. Declaring a global / globally scoped CSS Variables - Convert above Green Theme to Blue Theme
+---------------------
+
+Its pretty easy to change the variable values once at central place and it simply modify the themes or base properties look/feel/appearance
+
+- To convert above metioned Green Theme into Blue Theme, just change: `--base-bg-color: #6696f9; --base-text-color: #37327b` and you are done.
+
+> **Syntax & Example**: `1.5.1.2-define-convert-variables-global-blue-theme.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.5.1.2-define-convert-variables-global-blue-theme.html</title>
+
+    <link rel="stylesheet" href="./1.5.1.2-style-define-convert-variables-global-blue-theme.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="sub-container">
+
+        <h1 class="top-heading-text" id="topHeadingText">Create a Green Theme with CSS variables</h1>
+
+        <h1 class="heading-text" id="mainHeadingText">1.5 Declaring CSS Variables/Using CSS Variables</h1>
+
+        <p class="para-text" id="mainParaText">`Variables` are one of the most fundamental and important concepts in any programming language</p>
+
+        <h2 class="subheading-text" id="subHeadingText">1.5 - 1.5.1. Declaring a global / globally scoped CSS Variables</h2>
+
+        <ul>
+          <li>List Item 1 - Define variables in any of root elements </li>
+          <li>List Item 2 - Call variables for required ids/classes/elements</li>
+          <li>List Item 3 - Verify variables properties reflect properly</li>
+        </ul>
+      
+      </div>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.5.1.2-style-define-convert-variables-global-blue-theme.css`
+
+```css
+/* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
+:root {
+  /* global scoped variabed */
+  --font-face: Arial;
+  --base-bg-color: #6696f9;
+  --base-text-color: #37327b;
+  --base-padding: 30px 10px;
+
+  /* list item related variables */
+  --list-item-margin: 10px;
+  --list-item-padding: 20px 10px;
+  --list-item-corner-radius: 5px;
+}
+
+body {
+  font-family: var(--font-face);
+}
+
+.top-heading-text {
+  color: var(--base-text-color);
+}
+
+.heading-text {
+  /* access/call/use/apply/refer variables with var() function*/
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+ul > li {
+  color: var(--base-text-color);
+  padding: var(--list-item-padding);
+  border: 3px solid var(--base-bg-color);
+  border-radius: var(--list-item-corner-radius);
+  margin: var(--list-item-margin);
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.2-define-convert-variables-global-blue-theme.png" alt="Declaring & Using CSS Variables - Convert to Blue Theme" title="Declaring & Using CSS Variables - Convert to Blue Theme" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.2 - Declaring & Using CSS Variables - Convert to Blue Theme </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.2-style-define-convert-variables-global-blue-theme.png" alt="Styles Declaring & Using CSS Variables - Create a Green Theme" title="Styles Declaring & Using CSS Variables - Create a Green Theme" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.2 - Styles Declaring & Using CSS Variables - Convert to Blue Theme </figcaption>
+  </figure>
+</p>
+
