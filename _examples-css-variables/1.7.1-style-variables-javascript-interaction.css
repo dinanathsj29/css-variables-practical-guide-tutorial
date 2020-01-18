@@ -1,0 +1,38 @@
+:root {
+  --font-face: Arial;
+  --base-bg-color: #66f969;
+  --base-text-color: #327b34;
+  --base-padding: 30px 10px;
+
+  --list-item-margin: 10px;
+  --list-item-padding: 20px 10px;
+  --list-item-corner-radius: 5px;
+}
+
+body {
+  font-family: var(--font-face);
+}
+
+.top-heading-text {
+  color: var(--base-text-color);
+}
+
+.heading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+ul > li {
+  color: var(--base-text-color);
+  padding: var(--list-item-padding);
+  border: 3px solid var(--base-bg-color);
+  border-radius: var(--list-item-corner-radius);
+  margin: var(--list-item-margin);
+}
