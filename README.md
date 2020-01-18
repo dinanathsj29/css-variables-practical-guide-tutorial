@@ -58,6 +58,7 @@ Topics included/covered
     - 1.2. [What are CSS Variables](#12-what-are-css-variables)
     - 1.3. [Why CSS Variables](#13-why-css-variables) | 
     [CSS Variable Benefits](#13-css-variable-benefits)
+    - 1.4. [Browser support](#14-browser-support)
 
 1 Introduction to CSS Variables Custom Properties
 =====================
@@ -364,3 +365,14 @@ better readability, and more flexibility
 - One can easily access and overwrite CSS variables inside Media Query
 - Anytime we can create and use scoped variables used only for a particular element like the following variable is used only for a top navigation bar: `.nav-top { --base-link-color: #ed143d; }`
 
+1.4. Browser support
+---------------------
+
+The CSS Variable - custom properties are supported well in all modern browsers, except Internet Explorer
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.4-css-variables-browser-support.png" alt="CSS Variables browser support" title="CSS Variables browser support" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.4 - CSS Variables browser support </figcaption>
+  </figure>
+</p>
