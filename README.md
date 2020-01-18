@@ -460,7 +460,7 @@ a:link {
 ```css
 /* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
 :root {
-  /* global scoped variabed */
+  /* global scoped variables */
   --font-face: Arial;
   --base-bg-color: #66f969;
   --base-text-color: #327b34;
@@ -576,7 +576,7 @@ Its pretty easy to change the variable values once at central place and it simpl
 ```css
 /* CSS selectors must set/defined/declared inside any root selector like `:root` or `body`, so that these variables exists globally/entire document to use */
 :root {
-  /* global scoped variabed */
+  /* global scoped variables */
   --font-face: Arial;
   --base-bg-color: #6696f9;
   --base-text-color: #37327b;
@@ -629,8 +629,123 @@ ul > li {
 
 <p>
   <figure>
-    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.2-style-define-convert-variables-global-blue-theme.png" alt="Styles Declaring & Using CSS Variables - Create a Green Theme" title="Styles Declaring & Using CSS Variables - Create a Green Theme" width="1000" border="2" />
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.2-style-define-convert-variables-global-blue-theme.png" alt="Styles Declaring & Using CSS Variables - Convert to Blue Theme" title="Styles Declaring & Using CSS Variables - Convert to Blue Theme" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.2 - Styles Declaring & Using CSS Variables - Convert to Blue Theme </figcaption>
   </figure>
 </p>
 
+1.5.2. Declaring a local / locally scoped CSS Variables
+---------------------
+
+- We can also declare/create local variables, which are `accessible only to the declared element and it’s children`
+- Local scoped CSS Variables are useful and make sense when we want to apply some properties and values only to specific part(s) of app
+
+> **Syntax & Example**: `1.5.2.1-define-variables-local.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.5.2.1-define-variables-local.html</title>
+
+    <link rel="stylesheet" href="1.5.2.1-style-define-variables-local.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <div class="sub-container">
+
+        <h1 class="heading-text" id="mainHeadingText">1.5 Declaring CSS Variables/Using CSS Variables</h1>
+
+        <p class="para-text" id="mainParaText">`Variables` are one of the most fundamental and important concepts in any programming language</p>
+
+        <h2 class="subheading-text" id="subHeadingText">1.5 - 1.5.1. Declaring a global / globally scoped CSS Variables</h2>
+
+        <ul>
+          <li>List Item 1 - Define variables in any of root elements </li>
+          <li>List Item 2 - Call variables for required ids/classes/elements</li>
+          <li>List Item 3 - Verify variables properties reflect properly</li>
+        </ul>
+      
+      </div>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `1.5.2.1-style-define-variables-local.css`
+
+```css
+:root {
+  /* global scoped variables */
+  --font-face: Arial;
+  --base-bg-color: #f66969;
+  --base-text-color: #ffffff;
+  --base-padding: 30px 10px;
+
+  --list-item-margin: 10px;
+  --list-item-padding: 20px 10px;
+  --list-item-corner-radius: 5px;
+}
+
+body {
+  font-family: var(--font-face);
+}
+
+.heading-text {
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+.subheading-text {
+  /* local scoped variables */
+  --base-bg-color: #66f969;
+  --base-text-color: #327b34;
+
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--base-padding);
+}
+
+ul > li {
+  /* local scoped variables */
+  --base-bg-color: #6696f9;
+  --base-text-color: #37327b;
+
+  background-color: var(--base-bg-color);
+  color: var(--base-text-color);
+  padding: var(--list-item-padding);
+
+  border: 3px solid var(--base-bg-color);
+  border-radius: var(--list-item-corner-radius);
+  margin: var(--list-item-margin);
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.2.1-define-variables-local.png" alt="Declaring & Using CSS Variables - Create local scoped variables" title="Declaring & Using CSS Variables - Create local scoped variables" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.2.1 - Declaring & Using CSS Variables - Create local scoped variables </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.2.1-style-define-variables-local.png" alt="Styles Declaring & Using CSS Variables - Create local scoped variables" title="Styles Declaring & Using CSS Variables - Create local scoped variables" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.2.1 - Styles Declaring & Using CSS Variables - Create local scoped variables </figcaption>
+  </figure>
+</p>
