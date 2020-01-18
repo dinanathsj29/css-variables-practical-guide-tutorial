@@ -42,7 +42,7 @@ After completing/attending/finishing this Course/Tutorial, participants should b
 - Write CSS with less repetition, better readability, and more flexibility
 - Use and follow the power of advanced CSS Variables features in huge websites/applications
 - Declare and use the CSS variables in the Global and Local Scope
-- Understand the difference between CSS variables and Preprocessors like SASS, LESS variables
+- Understand the difference between CSS variables and Preprocessors (like SASS, LESS) variables
 
 Prerequisites for current course / What you need to know
 ---------------------
@@ -59,8 +59,9 @@ Topics included/covered
     - 1.3. [Why CSS Variables](#13-why-css-variables) | 
     [CSS Variable Benefits](#13-css-variable-benefits)
     - 1.4. [Browser support](#14-browser-support)
-     - 1.5. [Declaring CSS Variables](#15-declaring-css-variables) | 
+    - 1.5. [Declaring CSS Variables](#15-declaring-css-variables) | 
     [Using CSS Variables](#15-using-css-variables)
+    - 1.6. [CSS Variables vs Preprocessor Variables](#16-css-variables-vs-preprocessor-variables) | [Difference Between CSS Variables and Preprocessor Variables](#16-difference-between-css-variables-and-preprocessor-variables)
 
 1 Introduction to CSS Variables Custom Properties
 =====================
@@ -521,7 +522,7 @@ ul > li {
 1.5.1.2. Declaring a global / globally scoped CSS Variables - Convert above Green Theme to Blue Theme
 ---------------------
 
-Its pretty easy to change the variable values once at central place and it simply modify the themes or base properties look/feel/appearance
+It is pretty easy to change the variable values once at a central place and it simply modifies the themes or base properties look/feel/appearance
 
 - To convert above metioned Green Theme into Blue Theme, just change: `--base-bg-color: #6696f9; --base-text-color: #37327b` and you are done.
 
@@ -638,7 +639,7 @@ ul > li {
 ---------------------
 
 - We can also declare/create local variables, which are `accessible only to the declared element and it’s children`
-- Local scoped CSS Variables are useful and make sense when we want to apply some properties and values only to specific part(s) of app
+- Local scoped CSS Variables are useful and make sense when we want to apply some properties and values only to a specific part(s) of app
 
 > **Syntax & Example**: `1.5.2.1-define-variables-local.html`
 
@@ -749,3 +750,21 @@ ul > li {
     <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.2.1 - Styles Declaring & Using CSS Variables - Create local scoped variables </figcaption>
   </figure>
 </p>
+
+1.6. CSS Variables vs Preprocessor Variables
+---------------------
+1.6. Difference Between CSS Variables and Preprocessor Variables
+---------------------
+
+Variables are one of the major reasons why CSS preprocessors like `SASS` or `LESS` introduced and exist at all in the web world. There are many differences between CSS Variables and Preprocessor Variables, some important differences are mentioned below:
+
+| CSS Variables | Preprocessor Variables |
+| --------------------------------------------------| --------------------------------------------------|
+| Browser understand CSS, so no need for compilation as we are working with pure/native CSS | We need to convert/compile .SASS, .SCSS and .LESS source files into .CSS every time, so that the browser can understand compiled .CSS code|
+| More recently, native CSS has started supporting CSS variables, or "CSS Custom Properties". It allows you to work with variables directly in CSS. There are no compiling | Preprocessors introduced to use programming features like Variable, Functions, Loops into CSS styling, so Preprocessors source files must compile into .CSS | 
+| CSS variables are actually a part of the DOM | The variable was part of the preprocessor language (.SASS, .SCSS and .LESS files), not CSS itself. Once the code compiles, the variables are gone |
+| CSS variables are always available and accessible while debugging with Inspect Element and one can easily change it from `Inspect -> Element -> Source` | The preprocessor code/variables would do nothing in a browser, The browser wouldn't understand the declarations and toss them out (.SASS, .SCSS and .LESS variables are not available in browser) |
+| We can access and manipulate native CSS variables with JavaScript | As preprocessor uses (.SASS, .SCSS and .LESS) a separate file it is not accessible with JavaScript |
+| One can easily access and overwrite CSS variables inside Media Query (as and when media or resolution changes the browser recheck/reassign/repaints the variable if needed | Sometimes it is not possible with preprocessor variables |
+
+> **Note**: As Browser understands only CSS styling, the preprocessor code/variables would do nothing in a browser, The browser wouldn't understand the declarations and toss them out, that's the reason why Preprocessors files need to compile/converted into native CSS before sending/viewing into the browser
