@@ -1,0 +1,62 @@
+:root {
+  --main-font-family: Verdana; 
+  --animate-translatex-right: translateX(50px);
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.button {
+  color: var(--main-theme-color, #000000); /* black is fallback color */
+  border: 2px solid var(--main-theme-color, #000000);
+
+  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3); 
+  width:200px; padding: 5px; text-align: center; border-radius: 5px; cursor: pointer; margin-bottom: 10px; transition: all 0.25s ease-in-out;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 2px solid var(--main-theme-color, #000000); 
+  background-color: var(--main-theme-color, #000000);
+  box-shadow: 0px 0px 7px 2px var(--main-theme-color, #000000);
+  transform: var(--animate-translatex-right);
+  
+  transition: all 0.35s ease-in-out;
+}
+
+.btn-default {
+  /* no --main-theme-color defined for default button, so it will have theme color as fallback black color */
+}
+
+.btn-primary{
+  --main-theme-color: #007bff;
+}
+
+.btn-secondary{
+  --main-theme-color: #6c757d;
+}
+
+.btn-danger{
+  --main-theme-color: #dc3545;
+}
+
+.btn-success{
+  --main-theme-color: #28a745;
+}
+
+.btn-info{
+  --main-theme-color: #17a2b8;
+}
+
+.btn-warning{
+  --main-theme-color: #ffc107;
+}
+
+.btn-light{
+  --main-theme-color: #dedede
+}
+
+.btn-dark{
+  --main-theme-color: #343a40;
+}
