@@ -67,8 +67,9 @@ Topics included/covered
     
 2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
     - 2.1. [Managing Colors-Theme](#21-managing-colors-theme) 
-    - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support)
+    - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support) 
     - 2.3. [Hover with Transform Transition Amimation](#23-hover-with-Transform-transition-amimation) 
+    - 2.4. [CSS variables Cascading](#24-css-variables-cascading) 
 
 3. [CSS Variables Resources](#3-css-variables-resources)
 
@@ -134,7 +135,6 @@ const fullName = firstName + lastName
 
   <body>
     
-
     <!-- include external JavaScript - body section -->
     <script src="./1.1-script.js"></script>
     
@@ -1289,6 +1289,137 @@ body {
   </figure>
 </p>
 
+2.4. CSS variables Cascading
+---------------------
+
+> **Syntax & Example**: `2.4-css-var-demo-cascading.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.4-css-var-demo-cascading.html</title>
+
+    <link rel="stylesheet" href="2.4-style-css-var-demo-cascading.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.4 - CSS Variable Cascading</h2>
+
+      <div class="red-container">
+        red-container -> Hover to enlarge Blue! +++
+
+        <div class="green-container">
+          green-container -> Hover to enlarge Blue! ++
+
+          <div class="blue-container">
+            <span class="heading-text">blue-container -> Hover to enlarge Me! +</span>
+          </div>
+
+        </div>
+
+      </div>
+        
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.4-style-css-var-demo-cascading.css`
+
+```css
+:root {
+  --main-font-family: Verdana; 
+  --main-red-color: #dc3545;
+  --main-green-color: #28a745;
+  --main-blue-color: #007bff;
+  --main-padding: 20px 50px 0px 0px;
+  --main-line-height: 3;
+  --main-text-decoration: underline;
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.red-container {
+  background-color: var(--main-red-color);
+  padding: var(--main-padding);
+  line-height: var(--main-line-height);
+  text-align: right;
+  cursor: pointer;
+}
+
+.green-container {
+  background-color: var(--main-green-color);
+  padding: var(--main-padding);
+  line-height: var(--main-line-height);
+}
+
+.blue-container {
+  background-color: var(--main-blue-color);
+  padding: var(--main-padding);
+  line-height: var(--main-line-height);
+  color: #ffffff;  
+}
+
+.red-container div .heading-text {
+  transition: all 0.2s ease-in;
+}
+
+.heading-text {
+  font-size: var(--font-size, 12px);
+  font-weight: bold;
+}
+
+.blue-container:hover {
+  --font-size: 24px;
+}
+
+.green-container:hover {
+  --font-size: 36px;
+}
+
+.red-container:hover {
+  --font-size: 48px;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.4.1-css-var-demo-cascading-default-output.png" alt="CSS Variables Demo - Cascading default output" title="CSS Variables Demo - Cascading default output" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.4.1 - CSS Variables Demo - Cascading default output  </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.4.2-css-var-demo-cascading-green-hover.png" alt="CSS Variables Demo - Cascading Green hover output" title="CSS Variables Demo - Cascading Green hover output" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.4.2 - CSS Variables Demo - Cascading Green hover output </figcaption>
+  </figure>
+</p>
+
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.4.3-style-css-var-demo-cascading.png" alt="Style CSS Variables Demo - Cascading" title="Style CSS Variables Demo - Cascading" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.4.3 - Style CSS Variables Demo - Cascading </figcaption>
+  </figure>
+</p>
+
 3 CSS Variables Resources
 =====================  
 
@@ -1297,4 +1428,3 @@ body {
 > **Reference:** - https://www.w3schools.com/css/css3_variables.asp
 
 > **Reference:** - https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-
