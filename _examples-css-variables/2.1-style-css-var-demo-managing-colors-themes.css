@@ -1,0 +1,34 @@
+:root {
+  /* define/set variables */
+  --main-font-family: Verdana;
+  --main-theme-color: #ff7f50;
+  --main-line-height: 2;
+}
+
+body {
+  font-family: var(--main-font-family);
+  text-align: center;
+}
+
+.top-heading-text {
+  /* refer/call variables */
+  background-color: var(--main-theme-color);
+  line-height: var(--main-line-height);
+}
+
+.subheading-text {
+  color: var(--main-theme-color);
+}
+
+.info-text {
+  color: var(--main-theme-color);
+  margin: 0 auto;
+  max-width: 70%;
+  margin-bottom: 2em;
+}
+
+.footer-text {
+  background-color: var(--main-theme-color);
+  line-height: var(--main-line-height);
+  font-size: 0.75em;
+}
