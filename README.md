@@ -67,7 +67,8 @@ Topics included/covered
     
 2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
     - 2.1. [Managing Colors-Theme](#21-managing-colors-theme) 
-    - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support) 
+    - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support)
+    - 2.3. [Hover with Transform Transition Amimation](#23-hover-with-Transform-transition-amimation) 
 
 3. [CSS Variables Resources](#3-css-variables-resources)
 
@@ -1160,6 +1161,134 @@ body {
   </figure>
 </p>
 
+2.3. Hover with Transform Transition Amimation
+---------------------
+
+> **Syntax & Example**: `2.3-css-var-demo-transform-transition.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.3-css-var-demo-transform-transition.html</title>
+
+    <link rel="stylesheet" href="2.3-style-css-var-demo-transform-transition.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.3 - Hover effect with Fallback support</h2>
+      
+      <nav class="button-container">
+        <div class="button btn-default">btn-default </div>
+        <div class="button btn-primary">btn-primary </div>
+        <div class="button btn-secondary">btn-secondary </div>
+        <div class="button btn-success">btn-success </div>
+        <div class="button btn-danger">btn-danger </div>
+        <div class="button btn-info">btn-info </div>
+        <div class="button btn-warning">btn-warning </div>
+        <div class="button btn-light">btn-light </div>
+        <div class="button btn-dark">btn-dark </div>
+      </nav>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.3-style-css-var-demo-transform-transition.css`
+
+```css
+:root {
+  --main-font-family: Verdana; 
+  --animate-translatex-right: translateX(50px);
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.button {
+  color: var(--main-theme-color, #000000); /* black is fallback color */
+  border: 2px solid var(--main-theme-color, #000000);
+
+  box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.3); 
+  width:200px; padding: 5px; text-align: center; border-radius: 5px; cursor: pointer; margin-bottom: 10px; transition: all 0.25s ease-in-out;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 2px solid var(--main-theme-color, #000000); 
+  background-color: var(--main-theme-color, #000000);
+  box-shadow: 0px 0px 7px 2px var(--main-theme-color, #000000);
+  transform: var(--animate-translatex-right);
+  
+  transition: all 0.35s ease-in-out;
+}
+
+.btn-default {
+  /* no --main-theme-color defined for default button, so it will have theme color as fallback black color */
+}
+
+.btn-primary{
+  --main-theme-color: #007bff;
+}
+
+.btn-secondary{
+  --main-theme-color: #6c757d;
+}
+
+.btn-danger{
+  --main-theme-color: #dc3545;
+}
+
+.btn-success{
+  --main-theme-color: #28a745;
+}
+
+.btn-info{
+  --main-theme-color: #17a2b8;
+}
+
+.btn-warning{
+  --main-theme-color: #ffc107;
+}
+
+.btn-light{
+  --main-theme-color: #dedede
+}
+
+.btn-dark{
+  --main-theme-color: #343a40;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.3.1-css-var-demo-transform-transition.png" alt="CSS Variables Demo - Hover effect with Transform Transition" title="CSS Variables Demo - Hover effect with Transform Transition" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.3.1 - CSS Variables Demo - Hover effect with Transform Transition </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.3.2-style-css-var-demo-transform-transition.png" alt="Style CSS Variables Demo - Hover effect with Transform Transition" title="Style CSS Variables Demo - Hover effect with Transform Transition" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.3.2 - Style CSS Variables Demo - Hover effect with Transform Transition </figcaption>
+  </figure>
+</p>
+
 3 CSS Variables Resources
 =====================  
 
@@ -1168,3 +1297,4 @@ body {
 > **Reference:** - https://www.w3schools.com/css/css3_variables.asp
 
 > **Reference:** - https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
