@@ -1,7 +1,7 @@
 :root {
   /* define/set variables */
   --main-font-family: Verdana;
-  --main-theme-color: #ff7f50;
+  --main-theme-color: #ff7f50; /* #ff7f50; #ffc150; #ff50d1; #5250ff; */
   --main-line-height: 2;
 }
 
