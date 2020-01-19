@@ -70,6 +70,7 @@ Topics included/covered
     - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support) 
     - 2.3. [Hover with Transform Transition Amimation](#23-hover-with-Transform-transition-amimation) 
     - 2.4. [CSS variables Cascading](#24-css-variables-cascading) 
+    - 2.5. [JavaScript Theme Switcher](#25-javascript-theme-switcher) | [JavaScript Theme Color Swatch Switcher](#25-javascript-theme-color-swatch-switcher) 
 
 3. [CSS Variables Resources](#3-css-variables-resources)
 
@@ -1417,6 +1418,142 @@ body {
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.4.3-style-css-var-demo-cascading.png" alt="Style CSS Variables Demo - Cascading" title="Style CSS Variables Demo - Cascading" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image 2.4.3 - Style CSS Variables Demo - Cascading </figcaption>
+  </figure>
+</p>
+
+2.5. JavaScript Theme Switcher
+---------------------
+2.5. JavaScript Theme Color Swatch Switcher
+---------------------
+
+> **Syntax & Example**: `2.5-css-var-demo-javascript-theme-switcher.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.5-css-var-demo-javascript-theme-switcher.html</title>
+
+    <link rel="stylesheet" href="2.5-style-css-var-demo-javascript-theme-switcher.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <nav class="swatches-container">
+        <div style="background-color:#8a2be2;"></div>
+        <div style="background-color:#ed143d;"></div>
+        <div style="background-color:#ff8c00;"></div>
+        <div style="background-color:#00ced1;"></div>
+        <div style="background-color:#000080;"></div>
+      </nav>
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.5 - CSS Variable JavaScript Theme Switcher</h2>
+
+      <div class="content-container">
+
+        <article class="info-text">
+          The benefits of using variables in CSS are not that much different than from those of using variables in any other programming languages (define/initiate once and use when required). <br/> <br/>
+          The beauty of variables is that they let you store your valuables/properties in one place and update it on the fly for several various purposes. <br/>
+        </article>
+  
+        <footer class="footer-text">This is footer Text</footer>
+
+      </div>
+        
+    </div>
+    
+    <script src="./2.5-script-variables-javascript-theme-switcher.js"></script>
+
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.5-style-css-var-demo-javascript-theme-switcher.css`
+
+```css
+:root {
+  --main-font-family: Verdana;
+  --main-theme-color: #8a2be2;
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.swatches-container div {
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.top-heading-text {
+  color: var(--main-theme-color);
+}
+
+.content-container {
+  background-color: var(--main-theme-color);
+  padding: 20px;
+  color: #ffffff;
+  line-height: 2;
+}
+
+.info-text {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffffff;
+}
+
+.footer-text {
+  font-size: 0.8em;
+  text-align: center;
+}
+```
+
+> **Syntax & Example**: `2.5-script-variables-javascript-theme-switcher.js`
+
+```js
+console.log('in 2.5-script-variables-javascript-theme-switcher.js');
+
+// get the root element
+var root = document.querySelector(':root');
+
+// get swatches
+var swatches = document.querySelectorAll('.swatches-container div');
+
+swatches.forEach((curSwatch) => {
+  // click on each swatch button
+  curSwatch.addEventListener('click', (evt) => {
+    // set/replace root style color with currently clicked color
+    root.style.setProperty('--main-theme-color', event.target.style.backgroundColor);
+
+  }) // addEventListener
+}) // forEach
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.5.1-css-var-demo-javascript-theme-switcher-default.png" alt="CSS Variables Demo -  JavaScript Theme Color Swatch Switcher - Default" title="CSS Variables Demo -  JavaScript Theme Color Swatch Switcher - Default" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.5.1 - CSS Variables Demo -  JavaScript Theme Color Swatch Switcher - Default</figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.5.2-css-var-demo-javascript-theme-switcher-theme-changed.png" alt="CSS Variables Demo -  JavaScript Theme Color Swatch Switcher Theme changed" title="CSS Variables Demo -  JavaScript Theme Color Swatch Switcher Theme changed" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.5.2 - CSS Variables Demo - JavaScript Theme Color Swatch Switcher Theme changed </figcaption>
   </figure>
 </p>
 
