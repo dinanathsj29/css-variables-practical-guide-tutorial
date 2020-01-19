@@ -1,0 +1,47 @@
+:root {
+  --main-font-family: Verdana; 
+  --main-red-color: #dc3545;
+  --main-green-color: #28a745;
+  --main-blue-color: #007bff;
+  --main-padding: 20px 50px 0px 0px;
+  --main-line-height: 3;
+  --main-text-decoration: underline;
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.red-container {
+  background-color: var(--main-red-color); padding: var(--main-padding); line-height: var(--main-line-height); 
+  text-align: right; cursor: pointer;
+}
+
+.green-container {
+  background-color: var(--main-green-color); padding: var(--main-padding); line-height: var(--main-line-height);
+}
+
+.blue-container {
+  background-color: var(--main-blue-color); padding: var(--main-padding);
+  line-height: var(--main-line-height); color: #ffffff;  
+}
+
+.red-container div .heading-text {
+  transition: all 0.2s ease-in;
+}
+
+.heading-text {
+  font-size: var(--font-size, 12px); font-weight: bold;
+}
+
+.blue-container:hover {
+  --font-size: 24px;
+}
+
+.green-container:hover {
+  --font-size: 36px;
+}
+
+.red-container:hover {
+  --font-size: 48px;
+}
