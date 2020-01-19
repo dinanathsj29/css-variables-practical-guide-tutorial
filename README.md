@@ -63,7 +63,10 @@ Topics included/covered
     [Using CSS Variables](#15-using-css-variables)
     - 1.6. [CSS Variables vs Preprocessor Variables](#16-css-variables-vs-preprocessor-variables) | [Difference Between CSS Variables and Preprocessor Variables](#16-difference-between-css-variables-and-preprocessor-variables)
     - 1.7. [CSS Variables with JavaScript](#17-css-variables-with-javascript)
-     
+
+2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
+    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme ) 
+
 1 Introduction to CSS Variables Custom Properties
 =====================
 
@@ -777,7 +780,8 @@ Variables are one of the major reasons why CSS preprocessors like `SASS` or `LES
 - One of the important benefits of CSS Variables is that it can interact via the power of JavaScript
 - While dealing with CSS Variables JavaScript widely uses `getComputedStyle()` `getProperty()` and `style.setProperty()` methods
 
-**Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+> **Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+
 ```html
  <!DOCTYPE html>
 <html lang="en">
@@ -824,7 +828,8 @@ Variables are one of the major reasons why CSS preprocessors like `SASS` or `LES
 </html>
 ```
 
-**Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+> **Syntax & Example**: `1.7.1-style-variables-javascript-interaction.css`
+
 ```css
  :root {
   --font-face: Arial;
@@ -866,7 +871,8 @@ ul > li {
 }
 ```
 
-**Syntax & Example**: `1.7.1-css-variables-javascript-interaction.html`
+> **Syntax & Example**: `1.7.1-script-variables-javascript-interaction.js`
+
 ```js
  console.log('in 1.7.1-script-variables-javascript-interaction.js');
 
@@ -900,3 +906,103 @@ root.style.setProperty('--base-bg-color', '#f66969') // red- #f66969; green - #6
     <figcaption>&nbsp;&nbsp;&nbsp; Image 1.7.1.2 - CSS variable interaction with JavaScript updated Red output </figcaption>
   </figure>
 </p>
+
+2 CSS Variables Practical Demo Examples
+=====================  
+
+2.1. Managing Colors-Theme
+---------------------
+
+> **Syntax & Example**: `2.1-css-var-demo-managing-colors-themes.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.1-css-var-demo-managing-colors-themes.html</title>
+
+    <link rel="stylesheet" href="2.1-style-css-var-demo-managing-colors-themes.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.1 - Managing Colors Themes</h2>
+
+      <article class="info-text">
+        The benefits of using variables in CSS are not that much different than from those of using variables in any other programming languages (define/initiate once and use when required). <br/> <br/>
+        The beauty of variables is that they let you store your valuables/properties in one place and update it on the fly for several various purposes. <br/>
+      </article>
+
+      <footer class="footer-text">This is footer Text</footer>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.1-style-css-var-demo-managing-colors-themes.css`
+
+```css
+:root {
+  /* define/set variables */
+  --main-font-family: Verdana;
+  --main-theme-color: #ff7f50;
+  --main-line-height: 2;
+}
+
+body {
+  font-family: var(--main-font-family);
+  text-align: center;
+}
+
+.top-heading-text {
+  /* refer/call variables */
+  background-color: var(--main-theme-color);
+  line-height: var(--main-line-height);
+}
+
+.subheading-text {
+  color: var(--main-theme-color);
+}
+
+.info-text {
+  color: var(--main-theme-color);
+  margin: 0 auto;
+  max-width: 70%;
+  margin-bottom: 2em;
+}
+
+.footer-text {
+  background-color: var(--main-theme-color);
+  line-height: var(--main-line-height);
+  font-size: 0.75em;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.1.1-css-var-demo-managing-colors-themes.png" alt="CSS Variables Demo - Managing Colors Themes" title="CSS Variables Demo - Managing Colors Themes" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.1.1 - CSS Variables Demo - Managing Colors Themes </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.1.2-style-css-var-demo-managing-colors-themes.png" alt="Style CSS Variables Demo - Managing Colors Themes" title="Style CSS Variables Demo - Managing Colors Themes" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.1.2 - Style CSS Variables Demo - Managing Colors Themes </figcaption>
+  </figure>
+</p>
+
+
