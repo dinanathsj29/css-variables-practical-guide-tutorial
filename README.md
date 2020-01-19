@@ -66,7 +66,7 @@ Topics included/covered
     - 1.8. [CSS Variables var() function](#18-css-variables-var-function)
     
 2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
-    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme  ) 
+    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme) 
     - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support) 
 
 3. [CSS Variables Resources](#3-css-variables-resources)
