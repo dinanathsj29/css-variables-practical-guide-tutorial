@@ -66,7 +66,9 @@ Topics included/covered
     - 1.8. [CSS Variables var() function](#18-css-variables-var-function)
 
 2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
-    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme ) 
+    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme)
+    
+3. [CSS Variables Resources](#3-css-variables-resources)
 
 1 Introduction to CSS Variables Custom Properties
 =====================
@@ -1021,3 +1023,11 @@ body {
 </p>
 
 
+3 CSS Variables Resources
+=====================  
+
+> **Reference:** - https://www.w3.org/TR/css-variables/
+
+> **Reference:** - https://www.w3schools.com/css/css3_variables.asp
+
+> **Reference:** - https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
