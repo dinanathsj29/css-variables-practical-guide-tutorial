@@ -64,10 +64,11 @@ Topics included/covered
     - 1.6. [CSS Variables vs Preprocessor Variables](#16-css-variables-vs-preprocessor-variables) | [Difference Between CSS Variables and Preprocessor Variables](#16-difference-between-css-variables-and-preprocessor-variables)
     - 1.7. [CSS Variables with JavaScript](#17-css-variables-with-javascript)
     - 1.8. [CSS Variables var() function](#18-css-variables-var-function)
-
-2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
-    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme)
     
+2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
+    - 2.1. [Managing Colors-Theme](#21-managing-colors-theme  ) 
+    - 2.2. [Hover with Fallback support](#22-hover-with-fallback-support) 
+
 3. [CSS Variables Resources](#3-css-variables-resources)
 
 1 Introduction to CSS Variables Custom Properties
@@ -521,8 +522,8 @@ ul > li {
 
 <p>
   <figure>
-    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.1-style-define-variables-global-green-theme.png" alt="Styles Declaring & Using CSS Variables - Create a Green Theme" title="Styles Declaring & Using CSS Variables - Create a Green Theme" width="1000" border="2" />
-    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.1 - Styles Declaring & Using CSS Variables - Create a Green Theme </figcaption>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.1-style-define-variables-global-green-theme.png" alt="Declaring & Using CSS Variables - Styles Create a Green Theme" title="Declaring & Using CSS Variables - Styles Create a Green Theme" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.1 - Declaring & Using CSS Variables - Styles Create a Green Theme </figcaption>
   </figure>
 </p>
 
@@ -637,8 +638,8 @@ ul > li {
 
 <p>
   <figure>
-    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.2-style-define-convert-variables-global-blue-theme.png" alt="Styles Declaring & Using CSS Variables - Convert to Blue Theme" title="Styles Declaring & Using CSS Variables - Convert to Blue Theme" width="1000" border="2" />
-    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.2 - Styles Declaring & Using CSS Variables - Convert to Blue Theme </figcaption>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.1.2-style-define-convert-variables-global-blue-theme.png" alt="Declaring & Using CSS Variables - Styles Convert to Blue Theme" title="Declaring & Using CSS Variables - Styles Convert to Blue Theme" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.1.2 - Declaring & Using CSS Variables - Styles Convert to Blue Theme </figcaption>
   </figure>
 </p>
 
@@ -753,8 +754,8 @@ ul > li {
 
 <p>
   <figure>
-    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.2.1-style-define-variables-local.png" alt="Styles Declaring & Using CSS Variables - Create local scoped variables" title="Styles Declaring & Using CSS Variables - Create local scoped variables" width="1000" border="2" />
-    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.2.1 - Styles Declaring & Using CSS Variables - Create local scoped variables </figcaption>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/1.5.2.1-style-define-variables-local.png" alt="Declaring & Using CSS Variables - Styles Create local scoped variables" title="Declaring & Using CSS Variables - Styles Create local scoped variables" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 1.5.2.1 - Declaring & Using CSS Variables - Styles Create local scoped variables </figcaption>
   </figure>
 </p>
 
@@ -1017,11 +1018,147 @@ body {
 
 <p>
   <figure>
-    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.1.2-style-css-var-demo-managing-colors-themes.png" alt="Style CSS Variables Demo - Managing Colors Themes" title="Style CSS Variables Demo - Managing Colors Themes" width="1000" border="2" />
-    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.1.2 - Style CSS Variables Demo - Managing Colors Themes </figcaption>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.1.2-style-css-var-demo-managing-colors-themes.png" alt="CSS Variables Demo - Style Managing Colors Themes" title="CSS Variables Demo - Style Managing Colors Themes" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.1.2 - CSS Variables Demo - Style Managing Colors Themes </figcaption>
   </figure>
 </p>
 
+2.2. Hover with Fallback support
+---------------------
+
+> **Syntax & Example**: `2.2-css-var-demo-hover-fallback-support.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.2-css-var-demo-hover-fallback-support.html</title>
+
+    <link rel="stylesheet" href="2.2-style-css-var-demo-hover-fallback-support.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.2 - Hover effect with Fallback support</h2>
+
+      <article class="info-text">
+        - Any CSS variables defined in the stylesheet can be `accessed` by using `var()` function <br/>
+        - The CSS `var()` function can be used to insert the value of a custom property or a CSS variable <br/>
+        - The var() function cannot be used in any property names, selectors or anything else besides property values setting or providing fallback value support<br/> <br/>
+      </article>
+
+      <nav class="button-container">
+        <div class="button btn-default">btn-default </div>
+        <div class="button btn-primary">btn-primary </div>
+        <div class="button btn-secondary">btn-secondary </div>
+        <div class="button btn-success">btn-success </div>
+        <div class="button btn-danger">btn-danger </div>
+        <div class="button btn-info">btn-info </div>
+        <div class="button btn-warning">btn-warning </div>
+        <div class="button btn-light">btn-light </div>
+        <div class="button btn-dark">btn-dark </div>
+      </nav>
+
+    </div>
+  
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.2-style-css-var-demo-hover-fallback-support.css`
+
+```css
+:root {
+  /* define/set variables */
+  --main-font-family: Verdana; --main-line-height: 2;
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.top-heading-text {
+  line-height: var(--main-line-height);
+}
+
+.info-text {
+  color: var(--main-theme-color);
+  line-height: var(--main-line-height);
+  max-width: 70%; margin: 0 auto;
+}
+
+.button {
+  color: var(--main-theme-color, #000000); /* black is fallback color */
+  border: 2px solid var(--main-theme-color, #000000);
+  display: inline-block; padding: 5px; text-align: center; border-radius: 5px; cursor: pointer;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 2px solid var(--main-theme-color, #000000); background-color: var(--main-theme-color, #000000);
+}
+
+.btn-default {
+  /* no --main-theme-color defined for default button, so it will have theme color as fallback black color */
+}
+
+.btn-primary{
+  --main-theme-color: #007bff;
+}
+
+.btn-secondary{
+  --main-theme-color: #6c757d;
+}
+
+.btn-danger{
+  --main-theme-color: #dc3545;
+}
+
+.btn-success{
+  --main-theme-color: #28a745;
+}
+
+.btn-info{
+  --main-theme-color: #17a2b8;
+}
+
+.btn-warning{
+  --main-theme-color: #ffc107;
+}
+
+.btn-light{
+  --main-theme-color: #dedede
+}
+
+.btn-dark{
+  --main-theme-color: #343a40;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.2.1-css-var-demo-hover-fallback-support.png" alt="CSS Variables Demo - Hover effect with fallback support" title="CSS Variables Demo - Hover effect with fallback support" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.2.1 - CSS Variables Demo - Hover effect with fallback support </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.2.2-style-css-var-demo-hover-fallback-support.png" alt="Style CSS Variables Demo - Hover effect with fallback support" title="Style CSS Variables Demo - Hover effect with fallback support" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.2.2 - CSS Variables Demo - Style Hover effect with fallback support </figcaption>
+  </figure>
+</p>
 
 3 CSS Variables Resources
 =====================  
