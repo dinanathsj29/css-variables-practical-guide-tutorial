@@ -63,6 +63,7 @@ Topics included/covered
     [Using CSS Variables](#15-using-css-variables)
     - 1.6. [CSS Variables vs Preprocessor Variables](#16-css-variables-vs-preprocessor-variables) | [Difference Between CSS Variables and Preprocessor Variables](#16-difference-between-css-variables-and-preprocessor-variables)
     - 1.7. [CSS Variables with JavaScript](#17-css-variables-with-javascript)
+    - 1.8. [CSS Variables var() function](#18-css-variables-var-function)
 
 2. [CSS Variables Practical Demo Examples](#2-css-variables-practical-demo-examples)
     - 2.1. [Managing Colors-Theme](#21-managing-colors-theme ) 
@@ -906,6 +907,20 @@ root.style.setProperty('--base-bg-color', '#f66969') // red- #f66969; green - #6
     <figcaption>&nbsp;&nbsp;&nbsp; Image 1.7.1.2 - CSS variable interaction with JavaScript updated Red output </figcaption>
   </figure>
 </p>
+
+1.8. CSS Variables var() function
+---------------------
+ 
+- Any CSS variables defined in the stylesheet can be `accessed` by using `var()` function
+- The CSS `var()` function can be used to insert the value of a custom property or a CSS variable
+- The var() function cannot be used in any property names, selectors or anything else besides property values setting or providing fallback value support
+
+> **Syntax**: ``` var(<custom-name>, <value>) ``` <br/>
+> **Syntax**: ``` var( <custom-property-name> , <declaration-value>? ) ```
+
+- ```var(--main-color, #ff7f50) ```
+  - **`<custom-name>`**: **Required** Parameter. It's the custom property's name (must start with two dashes)
+  - **`<value>`**: **Optional**. The fallback value. Used only if the custom property is invalid or not defined or not found in stylesheet context (fallback support)
 
 2 CSS Variables Practical Demo Examples
 =====================  
