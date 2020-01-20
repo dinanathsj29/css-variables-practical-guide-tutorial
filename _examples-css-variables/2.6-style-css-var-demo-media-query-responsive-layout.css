@@ -1,0 +1,33 @@
+:root {
+  --main-font-family: Verdana;
+  --main-grid-column-layout: 1fr 1fr 1fr 1fr;
+  --main-grid-row-layout: 1fr;
+  --main-margin: 20px;
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.section-container {
+  display: grid; height: 70vh;
+  grid-template-columns: var(--main-grid-column-layout);
+}
+
+.section-container article {
+  margin: var(--main-margin);
+  grid-template-rows: var(--main-grid-row-layout);
+  padding: 10px; background-color: #ababab; text-align: center;
+}
+
+.footer-text {
+  font-size: 0.8em; text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+  :root {
+    --main-font-family: cursive;
+    --main-grid-column-layout: 1fr 1fr;
+    --main-margin: 10px;
+  }
+}
