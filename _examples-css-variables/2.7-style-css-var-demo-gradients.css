@@ -1,0 +1,23 @@
+:root {
+  --main-font-family: Verdana;
+  --gradient-color-1: #ff0000;
+  --gradient-color-2: #038703;
+  --gradient-color-3: #ffff00;
+  --gradient-linear: linear-gradient(var(--gradient-color-1), var(--gradient-color-3));
+  --gradient-radial: radial-gradient(circle, var(--gradient-color-1), var(--gradient-color-3), var(--gradient-color-2));
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.gradient-linear-container {
+  background-image: var(--gradient-linear);
+  height: 200px;
+}
+
+.gradient-radial-container {
+  background-image: var(--gradient-radial);
+  width: 200px;
+  height: 200px;
+}
