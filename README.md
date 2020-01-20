@@ -71,7 +71,8 @@ Topics included/covered
     - 2.3. [Hover with Transform Transition Amimation](#23-hover-with-Transform-transition-amimation) 
     - 2.4. [CSS variables Cascading](#24-css-variables-cascading) 
     - 2.5. [JavaScript Theme Switcher](#25-javascript-theme-switcher) | [JavaScript Theme Color Swatch Switcher](#25-javascript-theme-color-swatch-switcher) 
-    - 2.6. [Media Query Responsive Layout](#26-media-query-responsive-layout) 
+    - 2.6. [Media Query Responsive Layout](#26-media-query-responsive-layout)
+    - 2.7. [CSS Variables Gradients](#27-css-variables-gradients)
 
 3. [CSS Variables Resources](#3-css-variables-resources)
 
@@ -1662,6 +1663,90 @@ body {
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.6.3-style-var-demo-media-query-responsive-layout.png" alt="Style CSS Variables Demo - Media Query Responsive Layout" title="Style CSS Variables Demo - Media Query Responsive Layout" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image 2.6.3 - Style CSS Variables Demo - Media Query Responsive Layout </figcaption>
+  </figure>
+</p>
+
+2.7. CSS Variables Gradients
+---------------------
+
+> **Syntax & Example**: `2.7-css-var-demo-gradients.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.7-css-var-demo-gradients.html</title>
+
+    <link rel="stylesheet" href="2.7-style-css-var-demo-gradients.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.7 - CSS Variable Gradients </h2>
+
+      Linear Gradient:
+      <div class="gradient-linear-container"></div> <br/> <br/>
+      
+      Radial Gradient:
+      <div class="gradient-radial-container"></div>
+
+        
+    </div>
+    
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.7-style-css-var-demo-gradients.css`
+
+```css
+:root {
+  --main-font-family: Verdana;
+  --gradient-color-1: #ff0000;
+  --gradient-color-2: #038703;
+  --gradient-color-3: #ffff00;
+  --gradient-linear: linear-gradient(var(--gradient-color-1), var(--gradient-color-3));
+  --gradient-radial: radial-gradient(circle, var(--gradient-color-1), var(--gradient-color-3), var(--gradient-color-2));
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.gradient-linear-container {
+  background-image: var(--gradient-linear);
+  height: 200px;
+}
+
+.gradient-radial-container {
+  background-image: var(--gradient-radial);
+  width: 200px;
+  height: 200px;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.7.1-css-var-demo-gradients.png" alt="CSS Variables Demo - Gradients" title="CSS Variables Demo - Gradients" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.7.1 - CSS Variables Demo - Gradients </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.7.2-style-css-var-demo-gradients.png" alt="Style CSS Variables Demo - Gradients" title="Style CSS Variables Demo - Gradients" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.7.2 - Style CSS Variables Demo - Gradients </figcaption>
   </figure>
 </p>
 
