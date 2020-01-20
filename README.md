@@ -71,6 +71,7 @@ Topics included/covered
     - 2.3. [Hover with Transform Transition Amimation](#23-hover-with-Transform-transition-amimation) 
     - 2.4. [CSS variables Cascading](#24-css-variables-cascading) 
     - 2.5. [JavaScript Theme Switcher](#25-javascript-theme-switcher) | [JavaScript Theme Color Swatch Switcher](#25-javascript-theme-color-swatch-switcher) 
+    - 2.6. [Media Query Responsive Layout](#26-media-query-responsive-layout) 
 
 3. [CSS Variables Resources](#3-css-variables-resources)
 
@@ -1554,6 +1555,113 @@ swatches.forEach((curSwatch) => {
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.5.2-css-var-demo-javascript-theme-switcher-theme-changed.png" alt="CSS Variables Demo -  JavaScript Theme Color Swatch Switcher Theme changed" title="CSS Variables Demo -  JavaScript Theme Color Swatch Switcher Theme changed" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image 2.5.2 - CSS Variables Demo - JavaScript Theme Color Swatch Switcher Theme changed </figcaption>
+  </figure>
+</p>
+
+2.6. Media Query Responsive Layout
+---------------------
+
+> **Syntax & Example**: `2.6-css-var-demo-media-query-responsive-layout.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.6-css-var-demo-media-query-responsive-layout</title>
+
+    <link rel="stylesheet" href="2.6-style-css-var-demo-media-query-responsive-layout.css">
+  
+  </head>
+
+  <body>
+    
+    <div class="container">
+
+      <h1 class="top-heading-text" id="topHeadingText">2. CSS Variable Demo</h1>
+      
+      <h2 class="subheading-text" id="subHeadingText">2.6 - CSS Variable Media Query Responsive Layout</h2>
+
+      <section class="section-container">
+        <article>Article 1</article>
+        <article>Article 2</article>
+        <article>Article 3</article>
+        <article>Article 4</article>
+      </section>
+  
+      <footer class="footer-text">This is footer Text</footer>
+        
+    </div>
+    
+  </body>
+
+</html>
+```
+
+> **Syntax & Example**: `2.6-style-css-var-demo-media-query-responsive-layout.css`
+
+```css
+:root {
+  --main-font-family: Verdana;
+  --main-grid-column-layout: 1fr 1fr 1fr 1fr;
+  --main-grid-row-layout: 1fr;
+  --main-margin: 20px;
+}
+
+body {
+  font-family: var(--main-font-family);
+}
+
+.section-container {
+  display: grid;
+  height: 70vh;
+  grid-template-columns: var(--main-grid-column-layout);
+}
+
+.section-container article {
+  margin: var(--main-margin);
+  grid-template-rows: var(--main-grid-row-layout);
+  padding: 10px;
+  background-color: #ababab;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.8em;
+  text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+  :root {
+    --main-font-family: cursive;
+    --main-grid-column-layout: 1fr 1fr;
+    --main-margin: 10px;
+  }
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.6.1-css-var-demo-media-query-responsive-layout-default-view.png" alt="CSS Variables Demo - Media Query Responsive Layout - Default View" title="CSS Variables Demo - Media Query Responsive Layout - Default View" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.6.1 - CSS Variables Demo - Media Query Responsive Layout - Default View</figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.6.2-css-var-demo-media-query-responsive-layout-mobile-view.png" alt="CSS Variables Demo - Media Query Responsive Layout - Mobile View" title="CSS Variables Demo - Media Query Responsive Layout - Mobile View" width="300" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.6.2 - CSS Variables Demo - Media Query Responsive Layout - Mobile View </figcaption>
+  </figure>
+</p>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-variables/2.6.3-style-var-demo-media-query-responsive-layout.png" alt="Style CSS Variables Demo - Media Query Responsive Layout" title="Style CSS Variables Demo - Media Query Responsive Layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image 2.6.3 - Style CSS Variables Demo - Media Query Responsive Layout </figcaption>
   </figure>
 </p>
 
